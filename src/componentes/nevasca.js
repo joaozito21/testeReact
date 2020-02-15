@@ -23,15 +23,34 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 
 
 
+class Tabs extends React.Component {
+  render(){ 
+    return( <div>
+      <table  border ="6">
+          <tr>
+              <td>nome</td>
+              <td>comentario</td>
+          </tr>
+           {this.props.nom.map(tes =><tr><td key={tes.index}>{tes.text}</td></tr>)}
+        </table>
+  </div>)
+
+
+  }
+
+}
+
+
 
 class Neve extends React.Component {
     
     constructor(props) {
         super(props);
         this.state = { text: " ", nomet:" ",
-                          itens:[]
+                          itensNome:[],textComent:" ", comentario:" ",
+                        ItensComents:[]}
 
-        };
+      
         this.handleChange = this.handleChange.bind(this);
         this.handleChange2 = this.handleChange2.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -42,13 +61,21 @@ class Neve extends React.Component {
       
       
  handleSubmit(event){
- 
+
+   
    this.setState({text:this.state.nomet});
-   this.setState({ itens: [...this.state.itens,{text:this.state.nomet}]})
-    event.preventDefault();
-    }
+   this.setState({ itensNome:[...this.state.itensNome,
+                          {text:this.state.nomet}]})
+   this.setState({textComent:this.state.comentario});
+                          this.setState({ ItensComents:[...this.state.ItensComents,
+                                                 {textComent:this.state.comentario}]})
+   this.setState({nomet:" "});
+   this.setState({comentario:" "});
+   event.preventDefault(); 
+   }
  handleChange(event) {
   this.setState({comentario: event.target.value})
+  
 }
 handleChange2(event) {
   this.setState({nomet: event.target.value})
@@ -72,7 +99,7 @@ handleChange2(event) {
           <div class = "container">
                <div class =  "rows">
                                 <div class = "col-xl">
-                                   <Tit>killer frost  </Tit>
+                                   <Tit><i>killer frost</i></Tit>
                                    <br />
                                 </div>
                             </div> 
@@ -84,7 +111,7 @@ handleChange2(event) {
                                     <Tes   />
                             </div> 
                         </div>
-                         <div name = "forme" align = "center"  >
+                         <div name = "forme" align = "center" onSubmit={this.handleSubmit}   >
                              <Fom  >
                                 <legend>comentario</legend> 
                                     <label>texto</label>
@@ -92,20 +119,16 @@ handleChange2(event) {
                                            onChange = {this.handleChange2}
                                            value = {this.state.nomet}  
                                   />
-                                    <textarea
-                                        
-        	                                onChange={this.handleChange}
-        	                                placeholder="Post some lorem ipsum here"
-        	                                required
-        	                                value={this.state.comentario}
-        	                                style={{width: '100%', height: '150px'}}
-      	                            />
-                                  <button  type ="submit" onClick={this.handleSubmit}>teste</button>
+                                   <input type='text' 
+                                           onChange = {this.handleChange}
+                                           value = {this.state.comentario}  
+                                  />
+                                 
+                                  <button  type ="submit" >teste</button>
                            
             
                             </Fom>
-                        
-                                                    
+                                   
                              
                          </div>
                          <div class = "row">
@@ -124,11 +147,8 @@ handleChange2(event) {
                                                                  />
                                     </RadioGroup>
                                 </form>
-                          
-                             
-                          
-                              <Tab nom = {this.state.itens}/>
-                                          
+                                <Tabs nom  = {this.state.itensNome} com = {this.state.ItensComents}/>
+                                
                             </div>
                       </div>
                  

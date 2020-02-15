@@ -12,11 +12,6 @@ import React from 'react';
 import Menu from './cabecario.js';
 
 
-
-
-
- 
-
 export default class App extends React.Component {
   
   
@@ -46,11 +41,12 @@ export default class App extends React.Component {
                             </div>
                     
                             <div class = "row">
-                                    <div class = 'col-sm-5'> 
+                                    <div class = 'col-sm-12'> 
                                         <p>personagens de serie transmite verdade e representam bem a verdade
-                                            que tenta passar
+                                            que tenta passar tempo 
                                         </p>
                                     </div>
+                                    
                             </div>
                 </div>        
                                   

@@ -16,7 +16,18 @@ import MenuItem from '@material-ui/core/MenuItem';
 
 
 export default class Menu extends React.Component {
- 
+  constructor(props) {
+    super(props);
+    this.state = {
+                Age:10
+    };
+  
+   
+  }
+  mudanca(event){
+    this.setState({Age :event.target.value});
+
+  }
     render() {
             return (
                 <div>
@@ -30,7 +41,7 @@ export default class Menu extends React.Component {
           
              <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
                 <li>teste</li>                 
-              <li>  <Select labelId="label" id="select" value={this.state.Age} labelWidth = "30px">
+              <li>  <Select labelId="label" id="select" value={10}  labelWidth = "30px">
                            <MenuItem value="10" onchange={this.mudanca}>personagem</MenuItem>
                             <MenuItem value= "20" ><a href = '/componentes/vibro.js'> <img src = {Test} alt = " "  /></a></MenuItem>
                             <MenuItem  value ="30"><a href = '/componentes/nevasca.js'> <img src = {nev} alt = " "  /></a></MenuItem>  

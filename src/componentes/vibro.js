@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Tit,Corp} from './style.js';
 
-
+import vibro from './vibro_2.jpg';
 
 export class Vib extends React.Component {
     
@@ -21,14 +21,15 @@ export class Vib extends React.Component {
        <div class ="container">
            <meta charset="utf-8" />
           
-                    <Tit><h1>vibro</h1></Tit>
+                    <Tit><h1><strong><i>vibro ou Cisco Ramos </i></strong></h1></Tit>
                   <h2>{this.props.lok}</h2>
             
                <p>Francisco "Cisco" Ramon, apelidado de Vibro por Barry Allen, é um gênio da engenharia mecânica e uma meta-humano dos Laboratórios S.T.A.R., anteriormente servindo como guarda da sua prisão temporária. Ele veio de uma família pobre, 
                    de Porto Rico, e fornece muito alívio cômico no seu local de trabalho duro. Cisco também é um membro da Equipe Flash. Ele também era amigo de Harrison Wells antes de descobrir a sua verdadeira identidade como Eobard Thawne, embora Eobard visse Cisco como um filho adotivo antes
                     e depois da descoberta. Ele também desenvolveu uma rivalidade com Hartley Rathaway e um relacionamento amigável com Ray Palmer.
                     Mais tarde foi revelado que Cisco havia sido afetado pelo acelerador de partículas, fazendo com que ele se tornasse um meta-humano com a capacidade de ver através de vibrações e a capacidade de reter memórias de cronogramas alternativos de si mesmo antes de serem alterado
-                </p>         
+                </p>     
+                <img src={vibro}  alt = " " height = "200px" width="150px" />    
         </div>
         </Corp> 
           </div> 
