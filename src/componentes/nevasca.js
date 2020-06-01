@@ -1,6 +1,6 @@
 import Tes from './tes.js';
 
-import {Tit,Corp,Fom,Na} from './style.js';
+import {Tit,Fom,Na,Cop} from './style.js';
 
 import React from 'react';
 
@@ -8,20 +8,22 @@ import Vib from './vibro.js';
 
 import Test from './frost.jpg';
 
-import Button from '@material-ui/core/Button';
+
 
 
 import Tab from './table.js';
 
 
 
-
+import batalha from './batalha.mp4';
 
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 
+import cait from './snow.jpg';
 
+import Menu from './cabecario.js';
 
 class Tabs extends React.Component {
   render(){ 
@@ -31,7 +33,10 @@ class Tabs extends React.Component {
               <td>nome</td>
               <td>comentario</td>
           </tr>
-           {this.props.nom.map(tes =><tr><td key={tes.index}>{tes.text}</td></tr>)}
+           {this.props.nom.map(tes =><tr key={tes.index}>
+                                  <td >{tes.text}</td>
+                           <td>{tes.textComent}</td>
+                                  </tr>)}
         </table>
   </div>)
 
@@ -47,7 +52,7 @@ class Neve extends React.Component {
     constructor(props) {
         super(props);
         this.state = { text: " ", nomet:" ",
-                          itensNome:[],textComent:" ", comentario:" ",
+                          itensNome:[],textComent:"", comentario:"",
                         ItensComents:[]}
 
       
@@ -64,13 +69,12 @@ class Neve extends React.Component {
 
    
    this.setState({text:this.state.nomet});
-   this.setState({ itensNome:[...this.state.itensNome,
-                          {text:this.state.nomet}]})
    this.setState({textComent:this.state.comentario});
-                          this.setState({ ItensComents:[...this.state.ItensComents,
-                                                 {textComent:this.state.comentario}]})
-   this.setState({nomet:" "});
-   this.setState({comentario:" "});
+ 
+   this.setState({ itensNome:[...this.state.itensNome,
+                          {text:this.state.nomet,textComent:this.state.comentario}]})
+   
+    this.setState({textComent:""});
    event.preventDefault(); 
    }
  handleChange(event) {
@@ -85,7 +89,7 @@ handleChange2(event) {
      
     render() {      
             return ( 
-                  <Corp>
+                  <Cop>
                 <div> 
          
           
@@ -97,17 +101,28 @@ handleChange2(event) {
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
           <div class = "container">
+          <div class = "row">    
+                            <div class="col-lg"> 
+                                <Menu />
+                             </div>
+                                                
+                            </div>
                <div class =  "rows">
                                 <div class = "col-xl">
-                                   <Tit><i>killer frost</i></Tit>
+                                   <Tit><i>killer frost e Dra. Caitlin "Cait" Snow </i></Tit>
                                    <br />
                                 </div>
                             </div> 
                         <div class = 'row'>
-                            <div class = "col-sm-3">                         
-                                    <img src = {Test} alt = " "  />
+                            <div class = "col-sm-5"> 
+                            <p>                        
+                                    <img src = {Test} alt = " "  width ="330px" height="400px"/>
+                            </p>
+                            <p>
+                                    <img src = {cait} alt = " "  width ="330px" height="400px" />
+                            </p>
                             </div>
-                            <div class = "col-sm-8">
+                            <div class = "col-sm-7">
                                     <Tes   />
                             </div> 
                         </div>
@@ -132,7 +147,7 @@ handleChange2(event) {
                              
                          </div>
                          <div class = "row">
-                            <div class = "col-sm-12">
+                            <div class = "col-sm-6">
                                 <form align = "center"   >
                                 <legend > poderes </legend>
                                     <RadioGroup aria-label="poderes" name="gender1"  align = "center" >
@@ -147,17 +162,20 @@ handleChange2(event) {
                                                                  />
                                     </RadioGroup>
                                 </form>
-                                <Tabs nom  = {this.state.itensNome} com = {this.state.ItensComents}/>
+                                <Tabs nom  = {this.state.itensNome} />
                                 
                             </div>
+                            <div class ='col-sm-6 '>
+                             
+                            </div>
                       </div>
-                 
+                      <video src = {batalha} />
                     </div> 
-                   
-                </div>
-                </Corp>
+                      
+                </div></Cop> 
+               
            )  
-          
-            }               
+           
+            }           
 }
 export default Neve;

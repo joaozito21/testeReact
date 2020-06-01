@@ -3,17 +3,19 @@ import React from 'react';
 
 import Select from '@material-ui/core/Select';
 
-import {Sel} from  './style'
+import {Nave} from  './style';
 
 
 
 import Test from './vibro_3.jpg';
 
-import nev from './frost.jpg';
+import nev from './killer.jpg';
 
 import MenuItem from '@material-ui/core/MenuItem';
 
+import Hop from './hope.jpg';
 
+import arrow from './olie.jpg';
 
 export default class Menu extends React.Component {
   constructor(props) {
@@ -39,18 +41,23 @@ export default class Menu extends React.Component {
                 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
                <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
           
-             <nav class="navbar navbar-expand-lg navbar-light bg-light"> 
-                <li>teste</li>                 
+             <Nave class="navbar navbar-expand-lg navbar-light bg-light"> 
+              
+                          
               <li>  <Select labelId="label" id="select" value={10}  labelWidth = "30px">
-                           <MenuItem value="10" onchange={this.mudanca}>personagem</MenuItem>
-                            <MenuItem value= "20" ><a href = '/componentes/vibro.js'> <img src = {Test} alt = " "  /></a></MenuItem>
-                            <MenuItem  value ="30"><a href = '/componentes/nevasca.js'> <img src = {nev} alt = " "  /></a></MenuItem>  
+                           <MenuItem value="10"  selected>Personagem</MenuItem>
+                            <MenuItem  ><a href = '/componentes/vibro.js'> <img src = {Test} alt = " " width="350px"  height="200px"/></a></MenuItem>
+                            <MenuItem  ><a href = '/componentes/nevasca.js'> <img src = {nev} alt = " "  width="350px" height="200px"/></a></MenuItem>
+                            <MenuItem  ><a href = '/componentes/Hope.js'> <img src = {Hop} alt = " " width="350px" /></a></MenuItem>
+                            <MenuItem  ><a href = '/componentes/arrow.js'> <img src = {arrow} alt = " " width="350px" /></a></MenuItem>
                   
                     </Select>
                   
                 </li>
+                <li><a href='/'>HOME</a></li>
+                
                
-              </nav>
+              </Nave>
              
                 </div>
             )

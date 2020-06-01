@@ -21,7 +21,11 @@ export default class Tab extends React.Component {
               <td>nome</td>
               <td>comentario</td>
           </tr>
-           {this.props.nom.map(tes =><tr><td key={tes.index}>{tes.text}</td></tr>)}
+    {this.props.nom.map(tes =>
+                <tr key={tes.index}>
+                            <td >{tes.text}</td>
+                            <td>{tes.textComent}</td>
+                </tr>)}
          
         </table>
             </div>
